@@ -2,9 +2,9 @@ import { Button } from "./Button";
 
 export function Home () {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center mt-16">
       <div className="after">
-        <h2 className="font-['Roboto+Mono'] font-bold text-4xl text-gray-600">Bem-vindo ao cadastro de clientes da myjob.</h2>
+        <h2 className="font-['Roboto+Mono'] max-w-[400px] text-center font-bold text-4xl text-gray-600">Bem-vindo ao cadastro de clientes da myjob.</h2>
       </div>
       <span className="self-center text-blue-700 mt-14 mb-14">_______________________</span>
       <div>
