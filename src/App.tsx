@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Cadastro } from './components/Cadastro';
 import { Listagem } from './components/Listagem';
+import { ToastContainer } from 'react-toastify';
 
 function App () {
   return <>

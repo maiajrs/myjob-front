@@ -3,6 +3,8 @@ import { api } from '../apiClient.ts';
 import { Button } from './Button';
 import { Input } from './Input';
 
+import { toast, ToastContainer } from 'react-toastify';
+
 export interface ErrorCadastro {
   type: string
   error: string
@@ -21,16 +23,41 @@ export function Cadastro () {
   async function handleSubmit (event: FormEvent): Promise<void> {
     event.preventDefault()
 
-    const response = await api.post('/clients', {
-      name,
-      email,
-      idade,
-      telefone,
-      linkein,
-      anotacoes
-    })
+    try {
+      const response = await api.post('/clients', {
+        name,
+        email,
+        idade,
+        telefone,
+        linkein,
+        anotacoes
+      })
 
-    console.log(response)
+      if (response.status === 201) {
+        console.log('caiu no sucesso')
+        toast.success('Cliente cadastrado com sucesso!', {
+          position: 'top-center',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'light'
+        });
+      }
+    } catch (error) {
+      toast.error('Não foi possível salvar o cliente.', {
+        position: 'top-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      });
+    }
   }
 
   return (
@@ -50,6 +77,7 @@ export function Cadastro () {
         </textarea>
         <Button text="CADASTRAR" type="submit" color="#00BF1F" />
       </form>
+
     </section>
   )
 }
