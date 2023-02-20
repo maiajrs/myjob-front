@@ -17,8 +17,9 @@ export function Cadastro () {
   const [anotacoes, setAnotacoes] = useState('');
   const [error, setError] = useState<null | ErrorCadastro>(null);
 
-  function handleSubmit (event: FormEvent) {
+  async function handleSubmit (event: FormEvent): Promise<void> {
     event.preventDefault()
+    console.log(event)
   }
 
   return (
@@ -27,7 +28,7 @@ export function Cadastro () {
         <h2 className="self-center font-['Poppins'] text-2xl text-gray-600 font-bold">Cadastrar novo cliente:</h2>
         <div className="relative">
           <Input setValue={setName} setError={setError} value={name} name="name" type="text" placeholder="Seu nome" />
-          <span className="absolute w-full text-xs text-red-500 -bottom-4 left-0">{ error?.type === 'name' && error?.error }</span>
+          <span className="absolute w-full text-xs text-red-500 -bottom-4 left-0">{error?.type === 'name' && error?.error}</span>
 
         </div>
         <Input setValue={setEmail} setError={setError} value={email} name="email" type="text" placeholder="Email" />
