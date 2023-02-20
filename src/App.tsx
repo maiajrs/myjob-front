@@ -2,10 +2,15 @@ import { Header } from './components/Header';
 import { Home } from './components/Home';
 
 function App () {
-  return <div className="w-screen h-screen bg-gray-50">
-    <Header />
-    <Home />
-  </div>;
+  return <>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="cadastro" element={<Cadastro />} />
+        <Route path="listagem" element={<Listagem />} />
+      </Route>
+    </Routes>
+  </>;
 }
 
 export default App;
