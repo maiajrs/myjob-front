@@ -1,5 +1,8 @@
-import { Header } from './components/Header';
+import { Route, Routes } from 'react-router-dom';
+import { Cadastro } from './components/Cadastro';
 import { Home } from './components/Home';
+import { Layout } from './components/Layout';
+import { Listagem } from './components/Listagem';
 
 function App () {
   return <>
