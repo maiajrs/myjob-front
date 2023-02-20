@@ -14,8 +14,8 @@ interface InputProps {
 export function Input ({ type, placeholder, name, value, setValue, setError }: InputProps) {
   function handleInput (e: ChangeEvent<HTMLInputElement>) {
     setValue(e.target.value)
-    if (!validate(value, name, setError)) { return false }
-    if (!validate(value, name, setError)) { return false }
+    // if (!validate(value, name, setError)) { return false }
+    // if (!validate(value, name, setError)) { return false }
   }
   return (
     <input onChange={handleInput} name={name} className="py-3 px-4 w-full rounded border-[#5266CC] border outline-none" type={type} placeholder={placeholder} />

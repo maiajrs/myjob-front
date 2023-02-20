@@ -1,4 +1,5 @@
 import { FormEvent, useState } from 'react';
+import { api } from '../apiClient.ts';
 import { Button } from './Button';
 import { Input } from './Input';
 
@@ -19,7 +20,17 @@ export function Cadastro () {
 
   async function handleSubmit (event: FormEvent): Promise<void> {
     event.preventDefault()
-    console.log(event)
+
+    const response = await api.post('/clients', {
+      name,
+      email,
+      idade,
+      telefone,
+      linkein,
+      anotacoes
+    })
+
+    console.log(response)
   }
 
   return (
