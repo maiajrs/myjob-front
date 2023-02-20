@@ -61,7 +61,7 @@ export function Cadastro () {
   }
 
   return (
-    <section className="flex flex-col items-center mt-16">
+    <section className="flex flex-col items-center mt-10">
       <form onSubmit={handleSubmit} className="max-w-[500px] flex flex-col gap-6 w-full p-8 bg-white rounded shadow">
         <h2 className="self-center font-['Poppins'] text-2xl text-gray-600 font-bold">Cadastrar novo cliente:</h2>
         <div className="relative">
