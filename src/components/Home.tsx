@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Button } from './Button';
 
 export function Home () {
@@ -11,8 +12,12 @@ export function Home () {
         <h3 className="font-['Roboto+Mono'] text-2xl text-gray-600">O que você deseja fazer agora?</h3>
       </div>
       <div className="mt-20 flex gap-9">
-        <Button text="CADASTRAR NOVO CLIENTE" color="#00BF1F" />
-        <Button text="CONSULTAR CLIENTES" color="#5266CC" />
+        <Link to="/cadastro">
+          <Button text="CADASTRAR NOVO CLIENTE" color="#00BF1F" />
+        </Link>
+        <Link to="/listagem">
+          <Button text="CONSULTAR CLIENTES" color="#5266CC" />
+        </Link>
       </div>
     </main>
   )
